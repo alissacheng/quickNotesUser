@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/quickNotesUser/static/css/main.8cb000b1.chunk.css",
+    "main.css": "/quickNotesUser/static/css/main.28310523.chunk.css",
     "main.js": "/quickNotesUser/static/js/main.077e0e3d.chunk.js",
     "main.js.map": "/quickNotesUser/static/js/main.077e0e3d.chunk.js.map",
     "runtime-main.js": "/quickNotesUser/static/js/runtime-main.d396c6dc.js",
@@ -8,16 +8,16 @@
     "static/js/2.39c30ee0.chunk.js": "/quickNotesUser/static/js/2.39c30ee0.chunk.js",
     "static/js/2.39c30ee0.chunk.js.map": "/quickNotesUser/static/js/2.39c30ee0.chunk.js.map",
     "index.html": "/quickNotesUser/index.html",
-    "precache-manifest.27ef3a00574b01ef2fa77fc5e94350f3.js": "/quickNotesUser/precache-manifest.27ef3a00574b01ef2fa77fc5e94350f3.js",
+    "precache-manifest.1fce8c7575d0c442696a816e09486d42.js": "/quickNotesUser/precache-manifest.1fce8c7575d0c442696a816e09486d42.js",
     "service-worker.js": "/quickNotesUser/service-worker.js",
-    "static/css/main.8cb000b1.chunk.css.map": "/quickNotesUser/static/css/main.8cb000b1.chunk.css.map",
+    "static/css/main.28310523.chunk.css.map": "/quickNotesUser/static/css/main.28310523.chunk.css.map",
     "static/js/2.39c30ee0.chunk.js.LICENSE": "/quickNotesUser/static/js/2.39c30ee0.chunk.js.LICENSE",
     "static/media/App.css": "/quickNotesUser/static/media/corkBoard.a71f26e3.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.d396c6dc.js",
     "static/js/2.39c30ee0.chunk.js",
-    "static/css/main.8cb000b1.chunk.css",
+    "static/css/main.28310523.chunk.css",
     "static/js/main.077e0e3d.chunk.js"
   ]
 }
