@@ -259,8 +259,7 @@ class App extends Component {
             <form className="homePage">
                 <div className="wrapper">
                 <h1>Welcome to QuickNotes!</h1>
-                <p>Log in to your account, or create an account if you don't have one already. To create an account, just enter an email and password and click sign up!</p>
-                <p className="aside">Click <a href="https://alissacheng.github.io/alissaChengQuickNotes/">here</a> to test out the app without making an account and <a href="https://github.com/alissacheng/alissaChengQuickNotes">here</a> to see it on GitHub.</p>
+                <p>Log in or create an account if you don't have one already. To create an account, enter an email and password before clicking sign up.</p>
                 <label htmlFor="textEmail" className="visuallyHidden">Enter your email:</label>
                 <input id="textEmail" type="email" placeholder="Email"></input>
                 <label htmlFor="textPassword" className="visuallyHidden">Enter your password:</label>
@@ -269,6 +268,7 @@ class App extends Component {
                   <button onClick={this.login} id="loginBtn">Log In</button>
                   <button onClick={this.signUp} id="signUpBtn">Sign Up</button>
                 </div>
+                <p className="aside">Click <a href="https://alissacheng.github.io/alissaChengQuickNotes/">here</a> to test out the app without making an account or click <a href="https://github.com/alissacheng/alissaChengQuickNotes">here</a> to see this version on GitHub.</p>
               </div>
             </form>
           }

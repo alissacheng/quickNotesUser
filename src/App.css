@@ -58,16 +58,16 @@ html{
 }
 
 .aside{
-  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .homePage .wrapper{
   margin: 0;
-  width: 600px;
+  width: 525px;
   display: flex;
   flex-direction: column;
   background: rgb(255, 247, 179);
-  padding: 40px;
+  padding:40px;
   border-top: 20px solid rgb(250, 238, 129);
 }
 
@@ -76,13 +76,14 @@ html{
   font-size: 1.75rem;
   border: none;
   border-bottom: 1px solid black;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   background: rgb(255, 247, 179);
 }
 
 .buttons{
   display: flex;
   justify-content: flex-end;
+  margin-top: 10px;
 }
 
 /* Use main to flex notes and photo section */
