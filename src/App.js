@@ -76,6 +76,19 @@ class App extends Component {
               }
             }
           })
+          //Check if welcome dialog has already been closed before, and keep it closed if so
+          const welcomeRef = firebase.database().ref().child(emailFirebase).child("welcome")
+
+          welcomeRef.on("value", (snapshot)=>{
+            const welcome = snapshot.val()
+
+            for(let key in welcome){
+              if(theme[key] === "closed"){
+                document.getElementById("welcome").removeAttribute("open")
+                document.getElementById("welcome").classList.add("visuallyHidden")
+              }
+            }
+          })
         } 
       });
     }
@@ -88,9 +101,18 @@ class App extends Component {
     closeDialog = () => {
       document.getElementById("dialog").removeAttribute("open")
       document.getElementById("dialog").classList.add("visuallyHidden")
+    }
+
+//Close welcome dialog 
+    closeWelcome = () => {
       document.getElementById("welcome").removeAttribute("open")
       document.getElementById("welcome").classList.add("visuallyHidden")
+//Make sure welcome dialog doesn't re-open next time session
+      const emailFirebase = this.state.email.split(".")[0]+this.state.email.split(".")[1]
+      const welcomeRef = firebase.database().ref().child(emailFirebase).child("welcome")
+      welcomeRef.push("closed")
     }
+
 //Switches between two themes available whenever user toggles switch
 //Pushes theme chosen to firebase to save preferred theme for later
     toggleTheme = (event) =>{
@@ -166,7 +188,7 @@ class App extends Component {
       }).catch(function(error) {
         // Handle Errors here.
         var errorMessage = error.message;
-        alert(errorMessage + ` Try logging in again later or create a new account.`)
+        alert(errorMessage)
       });
     }
   //Sign up button
@@ -178,7 +200,7 @@ class App extends Component {
       auth.createUserWithEmailAndPassword(email, password).catch(function(error) {
         // Handle Errors here.
         var errorMessage = error.message;
-        alert(errorMessage + ` Try again later.`)
+        alert(errorMessage)
       });
     }
   //Log out button
@@ -196,21 +218,21 @@ class App extends Component {
           <div>
           {this.state.user ?
             <main>
-              {/* Logout button */}
-              <button onClick={this.logout} className="logoutBtn" title="Log out">
-                <span className="visuallyHidden">Click here to log out</span>
-                ◑
-              </button>
               {/* Toggle switch for two themes */}
               <label className="switch" title="Change theme">
               <span className="visuallyHidden">Click here to change the theme</span>
                 <input type="checkbox" onChange={this.toggleTheme} id="toggleTheme" tabIndex="0" className="visuallyHidden"/>
                 <span className="slider"></span>
               </label>
+              {/* Logout button */}
+              <button onClick={this.logout} className="logoutBtn" title="Log out">
+                <span className="visuallyHidden">Click here to log out</span>
+                ◑
+              </button>
               {/* Welcome message and instructions dialog */}
               <dialog id="welcome" className="welcome" open>
                 <div className="titleBar">
-                  <button id="closeBtn" onClick={this.closeDialog} title="Close window">X</button>
+                  <button id="closeBtn" onClick={this.closeWelcome} title="Close window">X</button>
                 </div>
                 <h1>Welcome to QuickNotes!</h1>
                 <p>QuickNotes is an application that allows you to save all your notes and photos in one convenient place.</p>
