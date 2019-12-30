@@ -23,6 +23,24 @@ html{
 }
 
 /* Login Homepage */
+
+.homePage{
+  margin: 10vh auto;
+  background: url(./assets/corkBoard.jpg);
+  padding: 0;
+  font-family: "Calibri", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Heading */
+
+.homePage h1{
+  margin: 0;
+}
+
+/* Login and sign up buttons */
 .homePage button{
   width: 100px;
   color: white;
@@ -37,20 +55,6 @@ html{
 .homePage button:hover,
 .homePage button:focus{
   background-color: rgb(25, 106, 173);
-}
-
-.homePage{
-  margin: 10vh auto;
-  background: url(./assets/corkBoard.jpg);
-  padding: 0;
-  font-family: "Calibri", sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.homePage h1{
-  margin: 0;
 }
 
 .homePage p{
@@ -75,6 +79,7 @@ html{
   padding: 10px;
   font-size: 1.75rem;
   border: none;
+  border-radius: 0px;
   border-bottom: 1px solid black;
   margin-bottom: 20px;
   background: rgb(255, 247, 179);
@@ -117,7 +122,9 @@ main{
 /* Close window button in welcome dialog */
 .welcome button{
   font-weight: bolder;
-  border-radius: 0px;
+  border:none;
+  background: transparent;
+  padding: 5px 15px;
 }
 
 /* Welcome dialog title bar color */
