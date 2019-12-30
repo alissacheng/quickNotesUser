@@ -457,6 +457,10 @@ input:checked + .slider:before {
     font-size: 2.25rem;
   }
 
+  .buttons {
+    justify-content: center;
+  }
+
   /* Remove margins for both sections */
   .notes,
   .photos{
