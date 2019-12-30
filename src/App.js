@@ -197,7 +197,7 @@ class App extends Component {
           {this.state.user ?
             <main>
               {/* Logout button */}
-              <button onClick={this.logout} className="logoutBtn">
+              <button onClick={this.logout} className="logoutBtn" title="Log out">
                 <span className="visuallyHidden">Click here to log out</span>
                 ◑
               </button>
@@ -268,7 +268,7 @@ class App extends Component {
                   <button onClick={this.login} id="loginBtn">Log In</button>
                   <button onClick={this.signUp} id="signUpBtn">Sign Up</button>
                 </div>
-                <p className="aside">Click <a href="https://alissacheng.github.io/alissaChengQuickNotes/">here</a> to test out the app without making an account or click <a href="https://github.com/alissacheng/alissaChengQuickNotes">here</a> to see this version on GitHub.</p>
+                <p className="aside">Click <a href="https://alissacheng.github.io/alissaChengQuickNotes/">here</a> to test out the app without making an account or click <a href="https://github.com/alissacheng/alissaChengQuickNotes">here</a> to see the test version on GitHub.</p>
               </div>
             </form>
           }
