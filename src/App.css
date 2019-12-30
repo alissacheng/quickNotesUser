@@ -40,7 +40,7 @@ html{
 }
 
 .homePage{
-  margin: 15vh auto;
+  margin: 10vh auto;
   background: url(./assets/corkBoard.jpg);
   padding: 0;
   font-family: "Calibri", sans-serif;
@@ -57,9 +57,13 @@ html{
   font-size: 1.75rem;
 }
 
+.aside{
+  margin-top: 0px;
+}
+
 .homePage .wrapper{
   margin: 0;
-  width: 500px;
+  width: 600px;
   display: flex;
   flex-direction: column;
   background: rgb(255, 247, 179);
@@ -445,6 +449,7 @@ input:checked + .slider:before {
 
   .homePage .wrapper{
     width: 310px;
+    padding: 20px;
   }
 
   /* Remove margins for both sections */
