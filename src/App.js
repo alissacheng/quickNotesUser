@@ -166,7 +166,7 @@ class App extends Component {
       }).catch(function(error) {
         // Handle Errors here.
         var errorMessage = error.message;
-        alert(errorMessage + `Try logging in again later or create a new account.`)
+        alert(errorMessage + ` Try logging in again later or create a new account.`)
       });
     }
   //Sign up button
@@ -178,7 +178,7 @@ class App extends Component {
       auth.createUserWithEmailAndPassword(email, password).catch(function(error) {
         // Handle Errors here.
         var errorMessage = error.message;
-        alert(errorMessage + `Try again later.`)
+        alert(errorMessage + ` Try again later.`)
       });
     }
   //Log out button
