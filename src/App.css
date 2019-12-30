@@ -24,6 +24,7 @@ html{
 
 /* Login Homepage */
 
+/* General styles*/
 .homePage{
   margin: 10vh auto;
   background: url(./assets/corkBoard.jpg);
@@ -34,13 +35,20 @@ html{
   align-items: center;
 }
 
-/* Heading */
+/*Homepage Heading */
 
 .homePage h1{
   margin: 0;
 }
 
 /* Login and sign up buttons */
+
+.buttons{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
 .homePage button{
   width: 100px;
   color: white;
@@ -57,6 +65,7 @@ html{
   background-color: rgb(25, 106, 173);
 }
 
+/* Font size for text in homepage */
 .homePage p{
   font-size: 1.75rem;
 }
@@ -75,6 +84,7 @@ html{
   border-top: 20px solid rgb(250, 238, 129);
 }
 
+/* Homepage log in form input styles */
 .homePage input{
   padding: 10px;
   font-size: 1.75rem;
@@ -83,12 +93,6 @@ html{
   border-bottom: 1px solid black;
   margin-bottom: 20px;
   background: rgb(255, 247, 179);
-}
-
-.buttons{
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 10px;
 }
 
 /* Use main to flex notes and photo section */
