@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/quickNotesUser/static/css/main.cf79904e.chunk.css",
-    "main.js": "/quickNotesUser/static/js/main.8c18d30d.chunk.js",
-    "main.js.map": "/quickNotesUser/static/js/main.8c18d30d.chunk.js.map",
+    "main.js": "/quickNotesUser/static/js/main.dde31130.chunk.js",
+    "main.js.map": "/quickNotesUser/static/js/main.dde31130.chunk.js.map",
     "runtime-main.js": "/quickNotesUser/static/js/runtime-main.d396c6dc.js",
     "runtime-main.js.map": "/quickNotesUser/static/js/runtime-main.d396c6dc.js.map",
     "static/js/2.39c30ee0.chunk.js": "/quickNotesUser/static/js/2.39c30ee0.chunk.js",
     "static/js/2.39c30ee0.chunk.js.map": "/quickNotesUser/static/js/2.39c30ee0.chunk.js.map",
     "index.html": "/quickNotesUser/index.html",
-    "precache-manifest.17736a1b86a3e75466b8376d078b9463.js": "/quickNotesUser/precache-manifest.17736a1b86a3e75466b8376d078b9463.js",
+    "precache-manifest.94b581910f373f53d38d036f8794aee2.js": "/quickNotesUser/precache-manifest.94b581910f373f53d38d036f8794aee2.js",
     "service-worker.js": "/quickNotesUser/service-worker.js",
     "static/css/main.cf79904e.chunk.css.map": "/quickNotesUser/static/css/main.cf79904e.chunk.css.map",
     "static/js/2.39c30ee0.chunk.js.LICENSE": "/quickNotesUser/static/js/2.39c30ee0.chunk.js.LICENSE",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.d396c6dc.js",
     "static/js/2.39c30ee0.chunk.js",
     "static/css/main.cf79904e.chunk.css",
-    "static/js/main.8c18d30d.chunk.js"
+    "static/js/main.dde31130.chunk.js"
   ]
 }
