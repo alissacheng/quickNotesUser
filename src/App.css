@@ -63,7 +63,7 @@ html{
 
 .homePage .wrapper{
   margin: 0;
-  width: 525px;
+  width: 505px;
   display: flex;
   flex-direction: column;
   background: rgb(255, 247, 179);
