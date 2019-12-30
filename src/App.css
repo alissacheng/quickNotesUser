@@ -272,7 +272,7 @@ button[type=open],
 
 /* New Note button */
 button[type=open]{
-  padding: 0 13px 4px;
+  padding: 0 16px 5px;
   font-size: 3.5rem;
   padding-top: 0;
   position: fixed;
@@ -284,7 +284,7 @@ button[type=open]{
 .customUpload{
   font-size: 2.75rem;
   cursor: pointer;
-  padding: 7px 14px;
+  padding: 7px 12px;
   top: 100px;
   right: 15px;
   position: fixed;
@@ -505,14 +505,14 @@ input:checked + .slider:before {
   /* Upload image button make smaller */
   .customUpload{
     font-size: 2.25rem;
-    padding: 6px 11px;
+    padding: 5px 8px;
     padding-top: 3px;
   }
 
     /* New note button make smaller*/
   button[type=open]{
     font-size: 2.75rem;
-    padding: 4px 11px;
+    padding: 3px 11px;
     padding-top: 0px;
     top: 180px;
   }
