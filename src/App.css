@@ -1,38 +1,537 @@
-.App {
-  text-align: center;
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.visuallyHidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
+
+/* Defualt theme format and general font styles */
+html{
+  background: url(./assets/corkBoard.jpg);
+  background-size: cover;
+  background-repeat: repeat;
+  font-size: 62.5%;
+  font-family: "Calibri", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* wrapper styles */
+.wrapper{
+  max-width: 1200px;
+  margin-top: 50px;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Login Homepage */
+.homePage button{
+  width: 100px;
+  color: white;
+  background-color: rgb(27, 122, 199);
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-left: 10px;
+  transition: 0.3s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.homePage button:hover,
+.homePage button:focus{
+  background-color: rgb(25, 106, 173);
+}
+
+.homePage{
+  margin: 15vh auto;
+  background: url(./assets/corkBoard.jpg);
+  padding: 0;
+  font-family: "Calibri", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homePage h1{
+  margin: 0;
+}
+
+.homePage p{
+  font-size: 1.75rem;
+}
+
+.homePage .wrapper{
+  margin: 0;
+  width: 500px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: rgb(255, 247, 179);
+  padding: 40px;
+  border-top: 20px solid rgb(250, 238, 129);
 }
 
-.App-link {
-  color: #61dafb;
+.homePage input{
+  padding: 10px;
+  font-size: 1.75rem;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-bottom: 30px;
+  background: rgb(255, 247, 179);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.buttons{
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Use main to flex notes and photo section */
+main{
+  display: flex;
+  min-height: 100vh;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+/* format notes section */
+.notes{
+  width: 678px;
+  margin-left: 2%;
+}
+
+/* formate photos section */
+.photos{
+  width: calc(96% - 693px);
+  margin-right: 35px;
+}
+
+/* Welcome Message Dialog */
+.welcome {
+  top: 15vh;
+  width: 600px;
+  font-size: 2rem;
+  background: white;
+}
+
+/* Close window button in welcome dialog */
+.welcome button{
+  font-weight: bolder;
+  border-radius: 0px;
+}
+
+/* Welcome dialog title bar color */
+.welcome .titleBar{
+  background: #2196F3;
+}
+
+/* Add padding around text in welcome message */
+.welcome li{
+  padding: 0;
+}
+
+.welcome ul{
+  display: block;
+  padding: 0 15px;
+}
+.welcome p{
+  padding: 0 15px;
+}
+
+/* Quick Notes Title in welcome message */
+h1{
+  font-size: 3.5rem;
+  text-align: center;
+  padding: 0;
+}
+
+/* Write a new sticky note dialog form */
+dialog{
+  position: absolute;
+  top: 30vh;
+  width: 300px;
+  padding: 0;
+  z-index: 10;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/* Make new note visible on screen regardless of where you are */
+.newNote{
+  position: fixed;
+}
+/* Format dialog items */
+form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+form textarea{
+  width: 100%;
+}
+
+/* Delete button for new note dialog/form */
+form button{
+border: none;
+background: rgb(248, 228, 137);
+}
+
+form .titleBar{
+  justify-content: space-between;
+}
+
+/* Add new note button */
+form button[type=submit]{
+  width: 115px;
+  align-self: flex-end;
+  font-size: 1.5rem;
+}
+
+/* GENERAL STICKY NOTE STYLES */
+/* Format Sticky Note textarea*/
+textarea {
+  background: rgb(250, 237, 166);
+  resize: none;
+  border: none;
+  padding: 13.5px 15px;
+  font-size: 1.75rem;
+  height: 200px;
+  width: 212px;
+  border-radius: 0px;
+}
+
+/* Format sticky note titlebar */
+.titleBar{
+  background: rgb(248, 228, 137);
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Sticky note delete button - aslo for dialog form for new note*/
+.titleBar .delete,
+form button{
+  padding: 5px 10px;
+  font-weight: bold;
+  display: block;
+  cursor: pointer;
+  color: #282c34a4;
+  width: 30px;
+  font-size: 1.25rem;
+  border: none;
+  background: rgb(248, 228, 137);
+}
+
+.titleBar .delete:hover,
+.titleBar .delete:focus,
+form button:hover,
+form button:focus{
+  background: rgb(230, 207, 109);
+}
+
+/* Format List of photos and notes */
+ul{
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  list-style: none;
+  padding: 0;
+}
+
+/* Add padding for each list item */
+.notes li{
+  padding: 6.5px;
+}
+
+.photos li{
+  padding: 6px;
+}
+
+/* Set max dimensions for image  */
+img{
+  max-height: 199px;
+  max-width: 278px;
+}
+
+/* Logout Button */
+.logoutBtn{
+  position: absolute;
+  top: 15px;
+  left: 2.5%;
+  font-size: 1.75rem;
+}
+
+/* Button styles */
+/* File upload button and new note button */
+button[type=open],
+.customUpload{
+  font-weight: bolder;
+  background:white;
+  cursor: pointer;
+  color: #282c34a4;
+  border: none;
+  border-radius: 35px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.603);
+  transition: 0.3s;
+}
+
+/* New Note button */
+button[type=open]{
+  padding: 0 13px 4px;
+  font-size: 3.5rem;
+  padding-top: 0;
+  position: fixed;
+  right: 15px;
+  top: 200px;
+}
+
+/* Upload file button */
+.customUpload{
+  font-size: 2.75rem;
+  cursor: pointer;
+  padding: 7px 14px;
+  top: 100px;
+  right: 15px;
+  position: fixed;
+}
+
+/* Hover and focus states for upload photo and new note buttons */
+button[type=open]:hover,
+button[type=open]:focus,
+input.customUpload:hover + label,
+input.customUpload:focus + label{
+  color: #2196F3;
+}
+
+/* Visually hide dialogs, toggle checkbox, input file upload and labels */
+.visuallyHidden { 
+  position: absolute !important;
+  height: 1px; 
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
+}
+
+/* Toggle Theme */
+/* Container holding the switch button */
+.switch {
+  position: absolute;
+  display: inline-block;
+  top:15px;
+  right: 15px;
+  width: 60px;
+  height: 34px;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2196F3;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #ccc;
+  box-shadow: 0 0 3px rgb(138, 138, 138);
+}
+
+input + .slider {
+  box-shadow: 0 0 3px rgb(26, 115, 187);
+}
+
+/* Switch styles */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:hover + .slider::before,
+input:focus + .slider::before{
+  box-shadow: 0 0 5px rgb(37, 37, 37);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Round sliders */
+.slider {
+  border-radius: 34px;
+}
+
+.slider:before {
+  border-radius: 50%;
+}
+
+/* Responsive */
+/* Small desktop */
+@media (max-width: 1250px){
+
+  /* Make width of each section smaller */
+  .notes{
+    width: 452px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .photos{
+    width: calc(95% - 470px);
+  }
+
+  /* Change padding for every list item */
+  li{
+    padding: 7px;
+  }
+
+}
+
+/* Tablet */
+@media (max-width: 830px){
+  /* Make width of each section smaller */
+  .notes {
+    width: 226px;
+  }
+
+  /* Adjust width of photos section */
+  .photos{
+    width: calc(92% - 228px);
+  }
+
+  /* Make font size of sticky notes smaller */
+  textarea{
+    font-size: 1.5rem;
+  }
+}
+
+/* Landscape mobile */
+@media (max-width: 630px){
+  /* Welcome pop up make smaller */
+  .welcome{
+    width: 500px;
+  }
+/* Adjust width of photos section */
+  .photos{
+    width: 300px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 550px){
+  /* Make each item display in one column */
+  main{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Log in Page */
+
+  .homePage{
+    margin: 4vh auto;
+  }
+
+  .homePage .wrapper{
+    width: 310px;
+  }
+
+  /* Remove margins for both sections */
+  .notes,
+  .photos{
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .photots{
+    margin-top: 0;
+  }
+
+  /* Remove gap between photos and notes section */
+  .notes li:last-of-type{
+    padding-bottom: 0;
+  }
+
+  .photos li:first-of-type{
+    padding-top: 0;
+  }
+
+  /* Center each list item */
+  ul{
+    justify-content: center;
+  }
+
+  /* Change padding for each list item */
+  .notes li{
+    padding: 8px;
+  }
+
+  .photos li{
+    padding: 7px;
+  }
+
+  /* Make welcome message smaller */
+  .welcome{
+    width: 300px;
+    top: 5vh
+  }
+
+  h1{
+    font-size: 3rem;
+  }
+
+  .welcome p,
+  .welcome li{
+    font-size: 1.5rem;
+  }
+
+  /* Reformat dialog for new note */
+  .newNote{
+    width: 220px;
+    top: 10vh;
+  }
+
+  .photos{
+    margin-top: 0;
+  }
+
+  /* Upload image button make smaller */
+  .customUpload{
+    font-size: 2.25rem;
+    padding: 6px 11px;
+    padding-top: 3px;
+  }
+
+    /* New note button make smaller*/
+  button[type=open]{
+    font-size: 2.75rem;
+    padding: 4px 11px;
+    padding-top: 0px;
+    top: 180px;
+  }
+
+  /* Make toggle switch smaller */
+  .switch{
+    width: 50px;
+    height: 26px;
+  }
+
+  .slider::before{
+    height: 20px;
+    width: 20px;
+    bottom: 3px;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(23px);
+    -ms-transform: translateX(23px);
+    transform: translateX(23px);
   }
 }
