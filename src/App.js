@@ -83,7 +83,7 @@ class App extends Component {
             const welcome = snapshot.val()
 
             for(let key in welcome){
-              if(theme[key] === "closed"){
+              if(welcome[key] === "closed"){
                 document.getElementById("welcome").removeAttribute("open")
                 document.getElementById("welcome").classList.add("visuallyHidden")
               }
