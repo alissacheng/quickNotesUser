@@ -197,7 +197,10 @@ class App extends Component {
           {this.state.user ?
             <main>
               {/* Logout button */}
-              <button onClick={this.logout} className="logoutBtn">Log Out</button>
+              <button onClick={this.logout} className="logoutBtn">
+                <span className="visuallyHidden">Click here to log out</span>
+                ◑
+              </button>
               {/* Toggle switch for two themes */}
               <label className="switch" title="Change theme">
               <span className="visuallyHidden">Click here to change the theme</span>
@@ -211,14 +214,14 @@ class App extends Component {
                 </div>
                 <h1>Welcome to QuickNotes!</h1>
                 <p>QuickNotes is an application that allows you to save all your notes and photos in one convenient place.</p>
-                <p>Choose one of the three buttons in the top right panel to get started:</p>
+                <p>Choose a button in the right panel to get started:</p>
                 <ul>
                   <li>- Toggle the switch to change themes</li>
                   <li>- Click the triangle (▲) to upload a photo</li>
                   <li>- Click the plus sign (+) to create a new note</li>
+                  <li>- Click the half-filled circle (◑) to log out</li>
                   <li>- Click the "x" to delete an item and close the window</li>
                 </ul>
-                <p>Happy posting!</p>
               </dialog>
               {/* Section for displaying notes */}
               <section className="notes wrapper" id="notes">

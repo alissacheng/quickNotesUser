@@ -250,16 +250,19 @@ img{
 
 /* Logout Button */
 .logoutBtn{
-  position: absolute;
-  top: 15px;
-  left: 2.5%;
-  font-size: 1.75rem;
+  position: fixed;
+  /* top: 300px; */
+  bottom: 20px;
+  right: 15px;
+  font-size: 2.75rem;
+  padding: 6px 14px;
 }
 
 /* Button styles */
 /* File upload button and new note button */
 button[type=open],
-.customUpload{
+.customUpload,
+.logoutBtn{
   font-weight: bolder;
   background:white;
   cursor: pointer;
@@ -294,7 +297,9 @@ button[type=open]{
 button[type=open]:hover,
 button[type=open]:focus,
 input.customUpload:hover + label,
-input.customUpload:focus + label{
+input.customUpload:focus + label,
+.logoutBtn:hover,
+.logoutBtn:focus{
   color: #2196F3;
 }
 
@@ -515,6 +520,11 @@ input:checked + .slider:before {
     padding: 3px 11px;
     padding-top: 0px;
     top: 180px;
+  }
+
+  .logoutBtn{
+    padding: 4px 9px;
+    font-size: 2.25rem;
   }
 
   /* Make toggle switch smaller */
