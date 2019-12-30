@@ -251,11 +251,10 @@ img{
 /* Logout Button */
 .logoutBtn{
   position: fixed;
-  /* top: 300px; */
   bottom: 20px;
   right: 15px;
   font-size: 2.75rem;
-  padding: 6px 14px;
+  padding: 6px 13px;
 }
 
 /* Button styles */
