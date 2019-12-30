@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/quickNotesUser/static/css/main.ddb0a725.chunk.css",
-    "main.js": "/quickNotesUser/static/js/main.f3312445.chunk.js",
-    "main.js.map": "/quickNotesUser/static/js/main.f3312445.chunk.js.map",
+    "main.css": "/quickNotesUser/static/css/main.9312432d.chunk.css",
+    "main.js": "/quickNotesUser/static/js/main.077e0e3d.chunk.js",
+    "main.js.map": "/quickNotesUser/static/js/main.077e0e3d.chunk.js.map",
     "runtime-main.js": "/quickNotesUser/static/js/runtime-main.d396c6dc.js",
     "runtime-main.js.map": "/quickNotesUser/static/js/runtime-main.d396c6dc.js.map",
     "static/js/2.39c30ee0.chunk.js": "/quickNotesUser/static/js/2.39c30ee0.chunk.js",
     "static/js/2.39c30ee0.chunk.js.map": "/quickNotesUser/static/js/2.39c30ee0.chunk.js.map",
     "index.html": "/quickNotesUser/index.html",
-    "precache-manifest.cd11027b9d30b26800e89e1b1536bcd0.js": "/quickNotesUser/precache-manifest.cd11027b9d30b26800e89e1b1536bcd0.js",
+    "precache-manifest.2228ea78ac1128790e28ccd76a1e3803.js": "/quickNotesUser/precache-manifest.2228ea78ac1128790e28ccd76a1e3803.js",
     "service-worker.js": "/quickNotesUser/service-worker.js",
-    "static/css/main.ddb0a725.chunk.css.map": "/quickNotesUser/static/css/main.ddb0a725.chunk.css.map",
+    "static/css/main.9312432d.chunk.css.map": "/quickNotesUser/static/css/main.9312432d.chunk.css.map",
     "static/js/2.39c30ee0.chunk.js.LICENSE": "/quickNotesUser/static/js/2.39c30ee0.chunk.js.LICENSE",
     "static/media/App.css": "/quickNotesUser/static/media/corkBoard.a71f26e3.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.d396c6dc.js",
     "static/js/2.39c30ee0.chunk.js",
-    "static/css/main.ddb0a725.chunk.css",
-    "static/js/main.f3312445.chunk.js"
+    "static/css/main.9312432d.chunk.css",
+    "static/js/main.077e0e3d.chunk.js"
   ]
 }
