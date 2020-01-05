@@ -13,7 +13,8 @@ class App extends Component {
           user:null,
           email:null,
           notesList:[],
-          userInput: ""
+          userInput: "",
+          userId: null
         }
     }
 
@@ -101,6 +102,8 @@ class App extends Component {
     closeDialog = () => {
       document.getElementById("dialog").removeAttribute("open")
       document.getElementById("dialog").classList.add("visuallyHidden")
+      document.getElementById("edit").removeAttribute("open")
+      document.getElementById("edit").classList.add("visuallyHidden")
     }
 
 //Close welcome dialog 
@@ -140,7 +143,7 @@ class App extends Component {
         event.preventDefault();
         //Put what we submit, the book title, in a constant
         const addNote = this.state.userInput
-        //add 'booksToAdd' to firebase (so that the dbRef listener will be called and it willl update state and cause the app to re-render)
+        //add to firebase (so that the dbRef listener will be called and it willl update state and cause the app to re-render)
 
         //push to firebase
 
@@ -160,6 +163,59 @@ class App extends Component {
         }
   
     }
+
+    //Edit note written by user
+    editNote = (event) => {
+      event.preventDefault();
+
+      document.getElementById("edit").setAttribute("open", true)
+      document.getElementById("edit").classList.remove("visuallyHidden")
+//Bind inputs
+      this.setState({
+        userInput: event.target.value,
+        userId: event.target.id
+      })
+
+    }
+//Save note editted
+    saveNote = (event) =>{
+      event.preventDefault();
+
+      const addNote = this.state.userInput
+        //add to firebase (so that the dbRef listener will be called and it willl update state and cause the app to re-render)
+
+        // Make sure no empty strings are submitted
+        if(addNote !== ""){
+          //Make user input an empty string, make sure to update HTML with value attribute
+          this.setState({
+              userInput: ""
+          })
+          //Close dialog after saving new note
+          document.getElementById("edit").removeAttribute("open")
+          document.getElementById("edit").classList.add("visuallyHidden")
+
+//update firebase, then update state by cloning notesList array and changing it
+          firebase.database().ref("notes/" + this.state.userId).set(addNote);
+        //Clone notes list array to edit it because cannot edit original array in state directly
+          const cloneNotesList = [...this.state.notesList]
+          //Find id of notes list being edited and change it to new value
+          cloneNotesList.forEach( item => {
+            if (item.noteId === this.state.userId){
+              item.noteText = addNote
+        //set state of newly changed array of notes list and set userId back to null to bind inputs
+              this.setState({
+                notesList: cloneNotesList,
+                userId: null
+              })
+            }
+          })
+          //Error handling blank notes
+        }else{
+          alert("Sorry! Blank notes cannot be submitted.")
+        }
+
+    }
+
 //Delete written note by user
     deleteNote = (event) => {
       event.preventDefault();
@@ -261,12 +317,23 @@ class App extends Component {
                     <textarea type="text" id="noteText" rows="7" cols="16" onChange={this.handleChange} value={this.state.userInput}></textarea>
                   </form>
                 </dialog>
+                {/* Dialog for form for editting and saving a new note */}
+                <dialog id="edit" className="newNote visuallyHidden">
+                  <form>
+                    <div className="titleBar">
+                      <button type="button" id="closeBtn" onClick={this.closeDialog} title="Close window">X</button>
+                      <button type="submit" title="Save note" onClick={this.saveNote}>Save Note +</button>
+                    </div>
+                    <textarea type="text" id="noteText" rows="7" cols="16" onChange={this.handleChange} value={this.state.userInput}></textarea>
+                  </form>
+                </dialog>
                 {/* Section to map array of notesList in state to display notes written by user */}
-                <ul>
+                <ul className="notes">
                     {this.state.notesList.map((noteValue, i)=>{
                         return(
                             <li key={i}>
                               <div className="titleBar">
+                                <button id={noteValue.noteId} value={noteValue.noteText} className="edit" title="Edit note" onClick={this.editNote}>📝 Edit</button>
                                 <button id={noteValue.noteId} className="delete" onClick={this.deleteNote} title="Delete note" tabIndex="0">X</button>
                               </div>
                               <textarea rows="7" cols="16" value={noteValue.noteText} readOnly></textarea>

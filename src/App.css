@@ -109,7 +109,7 @@ main{
   margin-left: 2%;
 }
 
-/* formate photos section */
+/* format photos section */
 .photos{
   width: calc(96% - 693px);
   margin-right: 35px;
@@ -211,11 +211,26 @@ textarea {
   border-radius: 0px;
 }
 
-/* Format sticky note titlebar */
+/* Format general sticky note titlebar */
 .titleBar{
   background: rgb(248, 228, 137);
   display: flex;
   justify-content: flex-end;
+}
+
+/* Format sticky note titlebar for written notes only */
+.notes .titleBar{
+  justify-content: space-between;
+}
+
+/* Format edit button */
+.titleBar .edit{
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  padding: 0 10px;
+  color: #282c34a4;
+  font-weight: bold;
 }
 
 /* Sticky note delete button - aslo for dialog form for new note*/
@@ -235,7 +250,9 @@ form button{
 .titleBar .delete:hover,
 .titleBar .delete:focus,
 form button:hover,
-form button:focus{
+form button:focus,
+.edit:hover,
+.edit:focus{
   background: rgb(230, 207, 109);
 }
 
