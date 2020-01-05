@@ -105,13 +105,13 @@ main{
 
 /* format notes section */
 .notes{
-  width: 678px;
+  width: 690px;
   margin-left: 2%;
 }
 
 /* format photos section */
 .photos{
-  width: calc(96% - 693px);
+  width: calc(96% - 695px);
   margin-right: 35px;
 }
 
@@ -418,11 +418,11 @@ input:checked + .slider:before {
 
   /* Make width of each section smaller */
   .notes{
-    width: 452px;
+    width: 460px;
   }
 
   .photos{
-    width: calc(95% - 470px);
+    width: calc(95% - 475px);
   }
 
   /* Change padding for every list item */
@@ -436,12 +436,12 @@ input:checked + .slider:before {
 @media (max-width: 830px){
   /* Make width of each section smaller */
   .notes {
-    width: 226px;
+    width: 230px;
   }
 
   /* Adjust width of photos section */
   .photos{
-    width: calc(92% - 228px);
+    width: calc(92% - 230px);
   }
 
   /* Make font size of sticky notes smaller */
