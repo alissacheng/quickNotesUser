@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/quickNotesUser/static/css/main.7f394a95.chunk.css",
-    "main.js": "/quickNotesUser/static/js/main.2a017fed.chunk.js",
-    "main.js.map": "/quickNotesUser/static/js/main.2a017fed.chunk.js.map",
+    "main.js": "/quickNotesUser/static/js/main.ec6b1a66.chunk.js",
+    "main.js.map": "/quickNotesUser/static/js/main.ec6b1a66.chunk.js.map",
     "runtime-main.js": "/quickNotesUser/static/js/runtime-main.d396c6dc.js",
     "runtime-main.js.map": "/quickNotesUser/static/js/runtime-main.d396c6dc.js.map",
     "static/js/2.7d599117.chunk.js": "/quickNotesUser/static/js/2.7d599117.chunk.js",
     "static/js/2.7d599117.chunk.js.map": "/quickNotesUser/static/js/2.7d599117.chunk.js.map",
     "index.html": "/quickNotesUser/index.html",
-    "precache-manifest.9e75d5b33e700e872f24c9e0e46310bb.js": "/quickNotesUser/precache-manifest.9e75d5b33e700e872f24c9e0e46310bb.js",
+    "precache-manifest.3d758dc08ba74f0f00c9162f6f66a19a.js": "/quickNotesUser/precache-manifest.3d758dc08ba74f0f00c9162f6f66a19a.js",
     "service-worker.js": "/quickNotesUser/service-worker.js",
     "static/css/main.7f394a95.chunk.css.map": "/quickNotesUser/static/css/main.7f394a95.chunk.css.map",
     "static/js/2.7d599117.chunk.js.LICENSE": "/quickNotesUser/static/js/2.7d599117.chunk.js.LICENSE",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.d396c6dc.js",
     "static/js/2.7d599117.chunk.js",
     "static/css/main.7f394a95.chunk.css",
-    "static/js/main.2a017fed.chunk.js"
+    "static/js/main.ec6b1a66.chunk.js"
   ]
 }
