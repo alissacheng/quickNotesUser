@@ -317,7 +317,7 @@ class App extends Component {
                     <textarea type="text" id="noteText" rows="7" cols="16" onChange={this.handleChange} value={this.state.userInput}></textarea>
                   </form>
                 </dialog>
-                {/* Dialog for form for editting and saving a new note */}
+                {/* Dialog for form for editing and saving a new note */}
                 <dialog id="edit" className="newNote visuallyHidden">
                   <form>
                     <div className="titleBar">
