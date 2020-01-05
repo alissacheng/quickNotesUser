@@ -104,6 +104,11 @@ class App extends Component {
       document.getElementById("dialog").classList.add("visuallyHidden")
       document.getElementById("edit").removeAttribute("open")
       document.getElementById("edit").classList.add("visuallyHidden")
+
+      this.setState({
+        userInput: "",
+        userId:null
+      })
     }
 
 //Close welcome dialog 
