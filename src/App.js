@@ -14,7 +14,7 @@ class App extends Component {
           email:null,
           notesList:[],
           userInput: "",
-          userId: null
+          noteId: null
         }
     }
 
@@ -107,7 +107,7 @@ class App extends Component {
 //Clear user input and user id once dialog closes
       this.setState({
         userInput: "",
-        userId:null
+        noteId:null
       })
     }
 
@@ -178,7 +178,7 @@ class App extends Component {
 //Bind inputs
       this.setState({
         userInput: event.target.value,
-        userId: event.target.id
+        noteId: event.target.id
       })
 
     }
@@ -200,17 +200,17 @@ class App extends Component {
           document.getElementById("edit").classList.add("visuallyHidden")
 
 //update firebase, then update state by cloning notesList array and changing it
-          firebase.database().ref("notes/" + this.state.userId).set(addNote);
+          firebase.database().ref("notes/" + this.state.noteId).set(addNote);
         //Clone notes list array to edit it because cannot edit original array in state directly
           const cloneNotesList = [...this.state.notesList]
           //Find id of notes list being edited and change it to new value
           cloneNotesList.forEach( item => {
-            if (item.noteId === this.state.userId){
+            if (item.noteId === this.state.noteId){
               item.noteText = addNote
-        //set state of newly changed array of notes list and set userId back to null to bind inputs
+        //set state of newly changed array of notes list and set noteId back to null to bind inputs
               this.setState({
                 notesList: cloneNotesList,
-                userId: null
+                noteId: null
               })
             }
           })
