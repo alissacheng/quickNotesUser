@@ -200,7 +200,8 @@ class App extends Component {
           document.getElementById("edit").classList.add("visuallyHidden")
 
 //update firebase, then update state by cloning notesList array and changing it
-          firebase.database().ref("notes/" + this.state.noteId).set(addNote);
+          const emailFirebase = this.state.email.split(".")[0] + this.state.email.split(".")[1]
+          firebase.database().ref(emailFirebase + "/notes/" + this.state.noteId).set(addNote);
         //Clone notes list array to edit it because cannot edit original array in state directly
           const cloneNotesList = [...this.state.notesList]
           //Find id of notes list being edited and change it to new value
