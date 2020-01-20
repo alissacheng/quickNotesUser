@@ -1,53 +1,41 @@
 import React, {Component} from "react";
 import firebase, {storage} from "./firebase";
 
-const auth = firebase.auth();
-
 class ImageUpload extends Component {
     constructor(){
         super();
         this.state = {
             photosList: [],
-            selectedFile:null,
-            user: null,
-            email: null
+            selectedFile:null
         }
     }
 
     componentDidMount(){
-        auth.onAuthStateChanged((user) => {
-            const email = user.email
+        const {emailProp} = this.props
+        if (emailProp) {
     
-            if (user) {
-                this.setState({ user, email });
-                
-                //Retrieve file name of each photo from database and storage bucket
+            //Retrieve file name of each photo from database and storage bucket
+            firebase.database().ref().child(emailProp).child("photos").on("value", (snapshot)=>{
+                const photoName = snapshot.val();
+                const newImages = [];
 
-                 //Firebase cannot have "." characters, must split and concat to remove
-                const emailFirebase = email.split(".")[0] + email.split(".")[1]
+                for(let key in photoName){
+                    storage.ref().child(photoName[key]).getDownloadURL().then(url=>{
+                        const singleImage = {
+                            photoId: key,
+                            photoName: photoName[key],
+                            photoUrl: url
+                        };
 
-                firebase.database().ref().child(emailFirebase).child("photos").on("value", (snapshot)=>{
-                    const photoName = snapshot.val();
-                    const newImages = [];
-
-                    for(let key in photoName){
-                        storage.ref().child(photoName[key]).getDownloadURL().then(url=>{
-                            const singleImage = {
-                                photoId: key,
-                                photoName: photoName[key],
-                                photoUrl: url
-                            };
-
-                            newImages.push(singleImage)
-        //Update the state for photos
-                            this.setState({
-                                photosList: newImages
-                            });
+                        newImages.push(singleImage)
+    //Update the state for photos
+                        this.setState({
+                            photosList: newImages
                         });
-                    }
-                });
-            };
-        });
+                    });
+                }
+            });
+        };
     }
 
     handleChange =(event) =>{
@@ -66,9 +54,8 @@ class ImageUpload extends Component {
             //Push the file name into the database
             //Note: Ideally I would get the image url immediately after downloading image into storage bucket and push/store THIS in the database (instead of the file name), but this causes issues, must store file name into database and THEN download its url at a later time
 
-             //Firebase cannot have "." characters, must split and concat to remove
-            const emailFirebase = this.state.email.split(".")[0]+this.state.email.split(".")[1]
-            const photosRef = firebase.database().ref().child(emailFirebase).child("photos")
+            const {emailProp} = this.props
+            const photosRef = firebase.database().ref().child(emailProp).child("photos")
             photosRef.push(image.name);
 
             //Upload image into storage bucket
@@ -76,7 +63,7 @@ class ImageUpload extends Component {
             uploadImage.on("state_changed",
             ()=>{   //update state after image is uploaded, so image displays immediately on screen
                     //Must grab a snapshot from firebase of photos file names and download url for each in order to update state
-                    firebase.database().ref().child(emailFirebase).child("photos").on("value", (snapshot)=>{
+                    firebase.database().ref().child(emailProp).child("photos").on("value", (snapshot)=>{
                         const photoName = snapshot.val();
                         const newImages = [];
             
@@ -110,9 +97,8 @@ class ImageUpload extends Component {
 
     //Remove photo name from database and storage bucket
     deletePhoto = (event) => {
-         //Firebase cannot have "." characters, must split and concat to remove
-        const emailFirebase = this.state.email.split(".")[0] + this.state.email.split(".")[1]
-        const photosRef = firebase.database().ref().child(emailFirebase).child("photos");
+        const {emailProp} = this.props
+        const photosRef = firebase.database().ref().child(emailProp).child("photos");
         photosRef.child(event.target.id).remove();
 
         //remove from storage bucket only if there isn't two of the same image
