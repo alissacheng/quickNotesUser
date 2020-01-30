@@ -25,7 +25,9 @@ class App extends Component {
       const email = user.email
 
       //Email without "." because firebase cannot process periods
-      const emailFirebase = email.split(".")[0] + email.split(".")[1]
+      const emailFirebase = email.split(".").reduce((acc,current)=>{
+        return acc + current
+      })
 
       if (user) {
         this.setState({ user, email, emailFirebase });
